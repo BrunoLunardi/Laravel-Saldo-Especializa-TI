@@ -22,6 +22,13 @@ Arquivos .env (raiz do projeto - usado para teste local) e /config/database.php
 
 cursolaravel55_saldo
 
+## Instalação Easy AdminLTE integration with Laravel 5
+
+https://github.com/jeroennoten/Laravel-AdminLTE
+
+composer require jeroennoten/laravel-adminlte
+
+
 <p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
 
 <p align="center">
