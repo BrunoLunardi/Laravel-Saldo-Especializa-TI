@@ -2,7 +2,7 @@
 
 composer create-project laravel/laravel Saldo-Especializa-TI
 
-## Subir servidor local:
+## Subir servidor local
 
 php artisan serve
 
@@ -14,11 +14,11 @@ php artisan make:model NomeDaModel --migration
 
 php artisan make:controller NomeDaControlller
 
-## Configuração do Banco de Dados:
+## Configuração do Banco de Dados
 
 Arquivos .env (raiz do projeto - usado para teste local) e /config/database.php
 
-## Nome do BD:
+## Nome do BD
 
 cursolaravel55_saldo
 
@@ -31,6 +31,20 @@ composer require jeroennoten/laravel-adminlte
 ## Assets do Easy AdminLTE
 
 php artisan vendor:publish --provider="JeroenNoten\LaravelAdminLte\ServiceProvider" --tag=assets
+
+## Seeds
+
+php artisan make:seed nome_seed
+
+Após popuar o seeder navegue em database/seeds/DatabaseSeeder.php e coloque a chamada para o seeder que você criou.
+
+Exemplo: $this->call(UsersTableSeeder::class);
+
+Para executar o Seed:
+
+php artisan db:seed
+
+
 
 
 <p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
