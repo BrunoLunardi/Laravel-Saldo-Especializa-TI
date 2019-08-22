@@ -1,3 +1,27 @@
+## Criação do projeto
+
+composer create-project laravel/laravel Saldo-Especializa-TI
+
+## Subir servidor local:
+
+php artisan serve
+
+## Criação de Models e Migrations
+
+php artisan make:model NomeDaModel --migration
+
+## Criar um controller
+
+php artisan make:controller NomeDaControlller
+
+## Configuração do Banco de Dados:
+
+Arquivos .env (raiz do projeto - usado para teste local) e /config/database.php
+
+## Nome do BD:
+
+cursolaravel55_saldo
+
 <p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
 
 <p align="center">
