@@ -44,7 +44,9 @@ Para executar o Seed:
 
 php artisan db:seed
 
+## Criar tela de login com AdminLTE
 
+php artisan make:adminlte (semelhante ao make:auth)
 
 
 <p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
