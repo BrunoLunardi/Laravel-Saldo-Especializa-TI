@@ -28,6 +28,10 @@ https://github.com/jeroennoten/Laravel-AdminLTE
 
 composer require jeroennoten/laravel-adminlte
 
+## Assets do Easy AdminLTE
+
+php artisan vendor:publish --provider="JeroenNoten\LaravelAdminLte\ServiceProvider" --tag=assets
+
 
 <p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
 
