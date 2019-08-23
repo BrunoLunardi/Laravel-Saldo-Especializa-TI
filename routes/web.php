@@ -10,23 +10,29 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-//rota inicial do site
-Route::get('/', 'Site\SiteController@index');
 //Route::get('/', 'SiteController@index');
 
 //cria grupo de rotas (para garantir que só usuários autenticados acessarão estas rotas)
 //'middleware' => 'auth' filtro para altenticação
-//'namespace' => 'Admin' evita usar \Admin em todas as rotas
-Route::group(['middleware' => ['auth'], 'namespace' => 'Admin'], function(){
+//'namespace' => 'Admin' evita usar \Admin em todas os Controllers
+//'prefix' => 'admin' evita colocar admin em todas as rotas
+Route::group(['middleware' => ['auth'], 'namespace' => 'Admin', 'prefix' => 'admin'], function(){
 
+    //rota inicial
+    Route::get('balance', 'BalanceController@index')->name('admin.balance');
     //rota para admin
         //->name('admin.home') nomeia a rota
-    Route::get('admin', 'AdminController@index')->name('admin.home');
+    //rota acessada após realizar login
+    Route::get('/', 'AdminController@index')->name('admin.home');
+    //rota para deposito (será acessada do botão recarga de resources/views/admin/balance/index.blade.php)
+    Route::get('deposit', 'BalanceController@deposit')->name('balance.deposit');
+    //rota que charmará controller para armazenar o valor do deposito (acessada pelo botão recarrega de resources/views/admin/balance/deposit.blade.php )
+    Route::post('deposit', 'BalanceController@depositStore')->name('deposit.store');
 
 });
 
-
+//rota inicial do site
+Route::get('/', 'Site\SiteController@index');
 
 //Rotas para o Login
 Auth::routes();

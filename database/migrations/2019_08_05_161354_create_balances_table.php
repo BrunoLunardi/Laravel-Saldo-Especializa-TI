@@ -26,8 +26,8 @@ class CreateBalancesTable extends Migration
             //define qual coluna é chave estrangeira (user_id)
                 //a chave primaria desta estrangeira é a id da tabela users (com delete cascade)
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            //saldo final
-            $table->double('amount', 10, 2);
+            //saldo final (com valor default de 0)
+            $table->double('amount', 10, 2)->default(0);
         });
     }
 

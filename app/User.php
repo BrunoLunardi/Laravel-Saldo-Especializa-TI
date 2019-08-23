@@ -6,6 +6,9 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
+//chama model para relacionamento 1 para 1
+use App\Models\Balance;
+
 class User extends Authenticatable
 {
     use Notifiable;
@@ -36,4 +39,10 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function balance(){
+        //Relacionamento 1 para 1 entre Usuário e o Saldo (User - Balance)
+        return $this->hasOne(Balance::class);
+    }
+
 }

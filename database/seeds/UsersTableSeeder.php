@@ -20,5 +20,13 @@ class UsersTableSeeder extends Seeder
             'email' => 'carlos@especializati.com.br',
             'password' => bcrypt('123456'),
         ]);
+
+        //inserir usuário no BD
+        User::create([
+            'name' => 'Outro Usuario',
+            'email' => 'contato@especializati.com.br',
+            'password' => bcrypt('123456'),
+        ]);
+
     }
 }

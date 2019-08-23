@@ -114,11 +114,13 @@ return [
     */
 
     'menu' => [
+/*
         [
             'text' => 'search',
             'search' => true,
         ],
-        ['header' => 'MENU'],
+        */
+        ['header' => ''],
         //[
             //'text' => 'blog',
             //'url'  => 'admin/blog',
@@ -127,8 +129,28 @@ return [
         [
             'text'        => 'Home',
             'url'         => 'home',
-            'icon'        => 'fa fa-home',
-        ],        
+            'icon'        => 'fas fa-tachometer-alt',
+        ],     
+        
+        [
+            'text'        => 'Financeiro',
+            'icon'        => 'far fa-money-bill-alt',
+            'submenu' => [
+                [
+                    'text' => 'Saldo',
+                    'url' => 'admin/balance',
+                    'icon' => 'fas fa-credit-card'
+                ],
+
+                [
+                    'text' => 'Histórico',
+                    'url' => 'admin/historic',
+                    'icon' => 'fas fa-history'
+                ],
+
+            ]
+        ],         
+
         /*
         [
             'text'        => 'pages',
