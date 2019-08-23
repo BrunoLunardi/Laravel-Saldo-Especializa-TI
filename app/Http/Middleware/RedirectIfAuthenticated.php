@@ -15,10 +15,14 @@ class RedirectIfAuthenticated
      * @param  string|null  $guard
      * @return mixed
      */
+
+
+     //verifica se ja está logada (caso tente acesso por rotas url do navegador)
     public function handle($request, Closure $next, $guard = null)
     {
         if (Auth::guard($guard)->check()) {
-            return redirect('/home');
+            //redireciona
+            return redirect('/admin');
         }
 
         return $next($request);
