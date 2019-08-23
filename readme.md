@@ -57,6 +57,22 @@ php artisan vendor:publish --provider="JeroenNoten\LaravelAdminLte\ServiceProvid
 https://github.com/caouecs/Laravel-lang
 
 
+Altere o nome da pasta para pt-br e copie ela para resources/lang
+
+Altere as seguintes linhas do arquivo config/app.php
+
+'locale' => 'pt-br',
+
+'fallback_locale' => 'pt-br',
+
+
+
+
+
+
+
+
+
 
 
 
