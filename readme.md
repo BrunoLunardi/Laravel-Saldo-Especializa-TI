@@ -48,6 +48,37 @@ php artisan db:seed
 
 php artisan make:adminlte (semelhante ao make:auth)
 
+## Criar arquivo de configuração do AdminLTE (para titulo das paginas, menu, etc.)
+
+php artisan vendor:publish --provider="JeroenNoten\LaravelAdminLte\ServiceProvider" --tag=config
+
+## Tradução da página
+
+https://github.com/caouecs/Laravel-lang
+
+
+Altere o nome da pasta para pt-br e copie ela para resources/lang
+
+Altere as seguintes linhas do arquivo config/app.php
+
+'locale' => 'pt-br',
+
+'fallback_locale' => 'pt-br',
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
 
