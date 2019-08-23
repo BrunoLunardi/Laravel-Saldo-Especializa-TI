@@ -85,6 +85,9 @@ O arquivo será criado em:
 resources/views/vendor/adminlte
 
 
+## Recriar as migrations e executar seeds
+
+php artisan migrate:refresh --seed
 
 
 
