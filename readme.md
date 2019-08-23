@@ -52,10 +52,11 @@ php artisan make:adminlte (semelhante ao make:auth)
 
 php artisan vendor:publish --provider="JeroenNoten\LaravelAdminLte\ServiceProvider" --tag=config
 
+Este arquivo estará em config/adminlte.php
+
 ## Tradução da página
 
 https://github.com/caouecs/Laravel-lang
-
 
 Altere o nome da pasta para pt-br e copie ela para resources/lang
 
@@ -65,9 +66,28 @@ Altere as seguintes linhas do arquivo config/app.php
 
 'fallback_locale' => 'pt-br',
 
+Após a instalação do pacote, pode exportar as configurações de idioma pelo comando:
+
+php artisan vendor:publish --provider="JeroenNoten\LaravelAdminLte\ServiceProvider" --tag=translations
+
+A configuração pode ser acessado em:
+
+resources/lang/vendor/adminlte
+
+## Customizando views 
+
+Para gerar um arquivo de configurações da view o comando é:
+
+php artisan vendor:publish --provider="JeroenNoten\LaravelAdminLte\ServiceProvider" --tag=views
+
+O arquivo será criado em:
+
+resources/views/vendor/adminlte
 
 
+## Recriar as migrations e executar seeds
 
+php artisan migrate:refresh --seed
 
 
 
