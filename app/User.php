@@ -8,6 +8,8 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 //chama model para relacionamento 1 para 1
 use App\Models\Balance;
+//chama model para relacionamento 1 para n
+use App\Models\Historic;
 
 class User extends Authenticatable
 {
@@ -40,9 +42,16 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    //saldo do usuário
     public function balance(){
         //Relacionamento 1 para 1 entre Usuário e o Saldo (User - Balance)
         return $this->hasOne(Balance::class);
+    }
+
+    //historico de movimentação do usuário
+    public function historics(){
+        //delimita a relação de 1 para n, na qual um usuário tem vários históricos de transações
+        return $this->hasMany(Historic::class);
     }
 
 }
