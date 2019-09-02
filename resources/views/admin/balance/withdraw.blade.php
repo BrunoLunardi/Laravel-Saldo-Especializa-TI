@@ -5,12 +5,12 @@
 
 <!-- Área para uma seção usada como título do dashboard -->
 @section('content_header')
-    <h1>Fazer Recarga</h1>
+    <h1>Fazer Retirada</h1>
 
     <ol class="breadcrumb">
             <li><a href="">Dashboard</a></li>
             <li><a href="">Saldo</a></li>
-            <li><a href="">Depositar</a></li>
+            <li><a href="">Retirada</a></li>
         </ol>
 
 @stop
@@ -20,7 +20,7 @@
 
 <div class="box">
     <div class="box-header">
-        <h3>Fazer Recarga</h3>
+        <h3>Fazer Retirada</h3>
     </div>
     <div class="box-body">
 
@@ -29,17 +29,17 @@
     <!-- aquivo de inclusão está em resources/views/admin/includes -->
     @include('admin.includes.alerts')
 
-        <!-- dados serão enviados para a rota deposit.store -->
-        <form method="POST" action="{{ route('deposit.store') }}">
+        <!-- dados serão enviados para a rota withdrawn.store -->
+        <form method="POST" action="{{ route('withdraw.store') }}">
 
             <!-- TOken para não dar erro de envio de dados -->
             {!! csrf_field() !!}
 
             <div class="form-group">
-                <input type="text" name="value" placeholder="Valor Recarga" class="form-control">
+                <input type="text" name="value" placeholder="Valor Retirada" class="form-control">
             </div>
             <div class="form-group">
-                    <button type="submit" class="btn btn-success">Recarregar</button>
+                    <button type="submit" class="btn btn-success">Sacar</button>
                 </div>            
         </form>
     </div>
