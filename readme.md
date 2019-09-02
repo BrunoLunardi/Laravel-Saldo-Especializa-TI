@@ -90,7 +90,9 @@ resources/views/vendor/adminlte
 php artisan migrate:refresh --seed
 
 
+## Criar request (validação)
 
+php artisan make:request nome_request
 
 
 
